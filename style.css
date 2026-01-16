@@ -1,0 +1,266 @@
+:root {
+  --primary-color: #ff6b35; /* Orange-Red for appetite */
+  --secondary-color: #2e2e2e; /* Dark Gray for premium feel */
+  --accent-color: #f7c59f; /* Soft Peach */
+  --background-color: #1a1a1a; /* Dark Background */
+  --card-bg: #262626; /* Slightly lighter dark for cards */
+  --text-main: #ffffff;
+  --text-muted: #b3b3b3;
+  --font-family: 'Outfit', sans-serif;
+  --transition-speed: 0.3s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: rgba(26, 26, 26, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 400;
+  transition: color var(--transition-speed);
+}
+nav a:hover {
+  color: var(--primary-color);
+}
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+.cart-icon svg {
+  stroke: var(--text-main);
+  transition: stroke var(--transition-speed);
+}
+.cart-icon:hover svg {
+  stroke: var(--primary-color);
+}
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+/* Hero Section */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Simple elegant gradient or could use a hero image if we had one */
+  background: radial-gradient(circle at center, #2e2e2e 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: var(--primary-color);
+    filter: blur(150px);
+    opacity: 0.1;
+    z-index: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+/* Menu Section */
+.menu-section {
+  padding: 4rem 5%;
+}
+.menu-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+.menu-item {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.menu-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 107, 53, 0.2);
+}
+.menu-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.menu-item:hover img {
+    transform: scale(1.05);
+}
+.item-details {
+  padding: 1.5rem;
+}
+.item-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+.item-details p {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.add-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.add-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.contact-section{
+    padding: 4rem 5%;
+
+}.contact-section h1 {
+  font-size: 3.5rem;
+  color: #f7c59f;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.contact-section h3{
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.contact-section p{
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.about-section{
+    padding: 6rem 5%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("assets/about-image.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    image-rendering: crisp-edges;
+    
+}
+.about-section h2{
+    font-size: 3.5rem;
+    color: cornsilk; 
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.about-section h3{
+    font-size: 2.5rem;
+    color: cornsilk;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.about-section h4{
+    font-size: 1.5rem;
+    color: cornsilk;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.about-section p{
+    font-size: 1.1rem;
+    color: cornsilk;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--text-muted);
+  margin-top: 4rem;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
